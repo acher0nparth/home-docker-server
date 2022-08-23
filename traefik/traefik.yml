@@ -9,6 +9,7 @@ providers:
   docker:
     endpoint: "tcp://socket-proxy:2375"
     exposedByDefault: false
+    network: proxy
 
   file:
     directory: /rules
@@ -17,10 +18,10 @@ providers:
 certificatesResolvers:
   mydnschallenge:
     acme:
-      email: mail@example.com
+      email: thackerb6@gmail.com
       storage: ./letsencrypt/acme.json
       dnsChallenge:
-        provider: ovh
+        provider: cloudflare
         delayBeforeCheck: 10
 
 log:
